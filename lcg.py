@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 X0 = randint(1, 0x7FFFFFFF)
 
 RANGE_START = 0
-RANGE_END = 500
+RANGE_END = 10000
 
 
 ### COMMON LCG SETS
@@ -16,13 +16,13 @@ RANGE_END = 500
 # BORLAND = 22695477, 1, 2**32
 
 # MULTIPLICATIVE FACTOR
-A = 1664525
+A = 65539
 
 # ADDITIVE FACTOR
-C = 1013904223
+C = 0
 
 # MODULUS FACTOR
-M = 2**32
+M = 2**31
 
 class LcgRandom(random.Random):
     def __init__(self, seed=[]):
@@ -68,7 +68,7 @@ plt.xticks(fontname='Segoe UI', fontsize=12)
 plt.yticks(fontname='Segoe UI', fontsize=12)
 #-----------------------------------------------------------------------
 
-ax.plot(x,y,z,'.')
+ax.plot(x,y,z,'.', color='#927493')
 ax.view_init(90, -90) # set initial view
 plt.draw()
 plt.pause(2) # wait 2 secs, then start rotating
