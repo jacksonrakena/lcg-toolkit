@@ -1,5 +1,6 @@
 import random
 from random import randint
+import matplotlib.pyplot as plt
 
 # SEED VALUE
 # RANDOM NUMBER = randint(1, 0x7FFFFFFF)
@@ -54,17 +55,11 @@ for i in range(RANGE_START, RANGE_END):
     y.append(generator.random())
     z.append(generator.random())
 
-import matplotlib.pyplot as plt
-import numpy as np
-from mpl_toolkits.mplot3d import Axes3D
-
- 
-
 fig = plt.figure(figsize=(10,7.5))
+plt.suptitle(f'LCG function (A={A}, C={C}, M={M})')
 ax = fig.add_axes([0,0,1,1], projection='3d') # use 3d plotting
 
- 
-
+plt.title(f'LCG function (A={A}, C={C}, M={M})')
 #----------------------------layout-------------------------------------
 plt.style.use('ggplot')
 fig.set_facecolor('w')
@@ -82,8 +77,6 @@ for angle in range(45, 110): # rotate the view
     ax.view_init(angle,-45)
     plt.draw()
     plt.pause(.01)
-
- 
 
 plt.pause(2)
 ax.view_init(45,-45) # set initial view
